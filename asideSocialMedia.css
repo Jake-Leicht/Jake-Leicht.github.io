@@ -1,0 +1,131 @@
+.asideSocial{
+    list-style-type: none;
+    font-size: 32pt;
+    width: 192px;
+    height: 324px;
+    position: fixed;
+    bottom: 0px;
+    text-align: left;
+    z-index: 2;
+}
+
+.icon{
+    color: var(--icon);
+    font-weight: bold;
+}
+
+.indicator{
+    width: 40px;
+    z-index: 2;
+}
+
+.indicator-down{
+    animation: indicate-down 1250ms infinite;
+    transform: rotate 360deg;
+    transition: rotate 0.5s ease-in;
+}
+
+.indicator-up{
+    animation: indicate-up 1250ms infinite;
+    /* todo: compatability issue, breaks code to inherit transform: rotate Xdeg*/
+    rotate: 180deg;
+    transition: rotate 0.5s ease-in;
+}
+
+@keyframes indicate-down{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(12px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes indicate-up{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-12px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.asideSocial-item{
+    width: 81px;
+    z-index: 2;
+}
+
+.highlight{
+    border: 2px solid var(--glow);
+    border-radius: 12px;
+    width: 80px;
+    height: 67px;
+    left: 34px;
+    position: fixed;
+    margin-left: -21px;
+    bottom: -67px;
+    z-index: 1;
+}
+
+.collapse-arrow{
+    visibility: hidden;
+}
+
+.glow{
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--glow), 0 0 30px var(--glow), 0 0 40px var(--glow), 0 0 55px var(--glow), 0 0 75px var(--glow);
+}
+
+@media screen and (max-width: 766px){
+    /* ?Aside Social Adjustments*/
+    .asideSocial{
+        font-size: 26pt;
+        width: 96px;
+        height: 280px;
+        bottom: 20px;
+        left: -72px;
+        transition: left 1s, background-color 0.8s;
+        background-color: var(--textColor02);
+        border-radius: 20px;
+    }
+    .asideSocial:hover{
+        left: 0px;
+        transition: left 1s, background-color 0.8s;
+        background-color: transparent;
+    }
+    .asideSocial:hover .collapse-arrow{
+        visibility: hidden;
+    }
+    .asideSocial-item{
+        width: 40px;
+    }
+    .highlight{
+        width: 60px;
+        height: 50px;
+        left: 40px;
+    }
+    .collapse-arrow{
+        font-size: 18pt;
+        color: var(--textColor03);
+        position: absolute;
+        top: 100px;
+        right: 5px;
+        visibility: visible;
+        font-weight: 800;
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    .asideSocial{
+        bottom: 40px;
+    }
+}

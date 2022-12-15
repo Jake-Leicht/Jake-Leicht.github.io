@@ -1,0 +1,318 @@
+.header-container{
+    min-width: var(--containerWidthMin);
+    max-width: var(--containerWidthMax);
+    margin-left: 5%;
+    height: 50px;
+    font-size: var(--aboutMeTabFontSize);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-selection-bar{
+    background-color: var(--textColor03);
+    width: calc(var(--tabWidth) * 0.66);
+    height: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: calc((5%) + ((var(--tabWidth) / 4) * 1) + ((var(--tabWidth)) * 0) + (var(--tabWidth)) * 0.165);
+    transition: margin-left 1s;
+}
+
+.header-tab{
+    color: var(--textColor);
+    width: var(--tabWidth);
+    text-align: center;
+    background-color: var(--textColor02);
+    border-radius: 18px;
+}
+
+.header-tab:hover{
+    color: var(--textColor03);
+}
+
+.content-container{
+    color: var(--textColor);
+    min-width: var(--containerWidthMin);
+    max-width: var(--containerWidthMax);
+    margin-left: 6%;
+    font-size: var(--standardFontSize);
+}
+
+.content-tab{
+    padding: 20px;
+    height: 60vh;
+}
+
+.content-tab-work{
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.underGrad-container{
+    width: 70%;
+    margin-right: 20px;
+}
+
+.content-tab-list{
+    line-height: 2.1;
+}
+
+.emphasize{
+    color: var(--textColor03);
+    font-size: 1.1em;
+    transition: color 2s, font-size 2s;
+}
+
+.active{
+    color: var(--textColor03);
+}
+
+.button-container{
+    padding: 6px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.certificate-btn{
+    margin-left: 10px;
+}
+
+.icon-btn{
+    margin-left: 6px;
+}
+
+.button{
+    color: var(--textColor);
+    font-weight: bold;
+    background-color: var(--textColor02);
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    overflow-y: hidden;
+}
+
+.button:hover{
+    color: var(--textColor03);
+}
+
+.button:hover .icon-btn{
+    animation: 400ms download-file linear 1;
+}
+
+@keyframes download-file{
+    0%{
+        transform: translateY(0px);
+    }
+    33%{
+        transform: translateY(50px);
+        visibility: hidden;
+    }
+    66%{
+        visibility: hidden;
+        transform: translateY(-100px)
+    }
+    100%{
+        transform: translateY(0px);
+        visibility: visible;
+    }
+}
+/* ? About me adjustments*/
+@media screen and (max-width: 766px){
+    /* ? About Me Tab*/
+    .header-selection-bar{
+        visibility: hidden;
+    }
+    .header-container{
+        font-size: 10pt;
+        font-weight: 800;
+        height: 8vh;
+        max-width: 100vw;
+        width: 100vw;
+        margin: 0px;
+        align-items: center;
+        text-align: center;
+    }
+    .header-tab{
+        background-color: transparent;
+        width: 33vw;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .content-tab{
+        width: 90vw;
+        display: block;
+    }
+
+    .content-tab-text{
+        font-size: 11pt;
+        width: 100vw;
+        text-align: left;
+    }
+
+    .content-tab-img{
+        visibility: hidden;
+    }
+
+    /* ? Education Tab*/
+    .content-tab-list{
+        line-height: 1.8;
+        font-size: 12pt;
+        list-style-type: disc;
+    }
+
+    /* ? Work */
+    .content-tab-work{
+        font-size: 12pt;
+    }
+
+    .underGrad-container{
+        width: 80vw;
+    }
+
+    .techMentor-container{
+        margin-top: 16px;
+    }
+
+    .underGrad-container h1, .techMentor-container h1{
+        font-size: 14pt;
+    }
+    .underGrad-list, .techMentor-list{
+        width: 80vw;
+    }
+
+    .underGrad-list-detail{
+        font-size: 12pt;
+    }
+
+    .button{
+        font-size: 12pt;
+        height: 5vh;
+    }
+
+    .icon-btn{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    /* ? About Me Tab */
+    .header-container, .header-selection-bar{
+        margin-top: 10px;
+    }
+    .header-tab{
+        text-align: center;
+        margin-top: 5px;
+    }
+    .content-tab{
+        width: 90vw;
+        display: block;
+    }
+
+    .content-tab-text{
+        font-size: 16pt;
+        width: 100vw;
+        text-align: left;
+    }
+
+    /* ? Education Tab*/
+    .content-tab-list{
+        line-height: 1.8;
+        font-size: 16pt;
+        list-style-type: disc;
+    }
+
+    /* ? Work */
+    .content-tab-work{
+        font-size: 12pt;
+    }
+
+    .underGrad-container{
+        width: 80vw;
+    }
+
+    .techMentor-container{
+        margin-top: 16px;
+    }
+
+    .underGrad-container h1, .techMentor-container h1{
+        font-size: 20pt;
+    }
+    .underGrad-list, .techMentor-list{
+        width: 80vw;
+    }
+
+    .underGrad-list-detail{
+        font-size: 16pt;
+    }
+
+    .button-container{
+        display: block;
+    }
+
+    .button{
+        font-size: 16pt;
+        height: 5vh;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px){
+    /* ? About Me Tab */
+    .header-container, .header-selection-bar{
+        margin-top: 10px;
+    }
+    .header-tab{
+        text-align: center;
+        margin-top: 5px;
+    }
+    .content-tab{
+        width: 90vw;
+        display: block;
+    }
+
+    .content-tab-text{
+        font-size: 16pt;
+        width: 100vw;
+        text-align: left;
+    }
+
+    /* ? Education Tab*/
+    .content-tab-list{
+        line-height: 1.8;
+        font-size: 16pt;
+        list-style-type: disc;
+    }
+
+    /* ? Work */
+    .content-tab-work{
+        font-size: 12pt;
+    }
+
+    .underGrad-container{
+        width: 80vw;
+    }
+
+    .techMentor-container{
+        margin-top: 16px;
+    }
+
+    .underGrad-container h1, .techMentor-container h1{
+        font-size: 20pt;
+    }
+    .underGrad-list, .techMentor-list{
+        width: 80vw;
+    }
+
+    .underGrad-list-detail{
+        font-size: 16pt;
+    }
+
+    .button-container{
+        display: block;
+    }
+
+    .button{
+        font-size: 16pt;
+        height: 5vh;
+    }
+}

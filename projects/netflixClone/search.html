@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Document details-->
+    <title>Netflix | Search</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <meta name="author" content="Jake Leicht">
+
+    <!--Stylesheets (CSS)-->
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./search.css">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="./images/faviconNetflix.jpg" sizes="260x260">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="nav navbar-nav">
+            <li id="search-btn" class="navbar-item"><i class="fa-solid fa-magnifying-glass nav-icon active"></i><span class="navbar-item-text">Search</span></li>
+            <li id="home-btn" class="navbar-item"><i class="fa-solid fa-house nav-icon"></i><span class="navbar-item-text">Home</span></li>
+            <li id="surpriseMe-btn" class="navbar-item"><i class="fa-solid fa-arrow-rotate-right nav-icon"></i><span class="navbar-item-text">Surprise Me</span></li>
+            <li id="newsPopular-btn" class="navbar-item"><i class="fa-solid fa-arrow-trend-up nav-icon"></i><span class="navbar-item-text">News & Popular</span></li>
+            <li id="tvShows-btn" class="navbar-item"><i class="fa-solid fa-tv nav-icon"></i><span class="navbar-item-text">Tv Shows</span></li>
+            <li id="movies-btn" class="navbar-item"><i class="fa-solid fa-clapperboard nav-icon"></i><span class="navbar-item-text">Movies</span></li>
+            <li id="categories-btn" class="navbar-item"><i class="fa-solid fa-shapes nav-icon"></i><span class="navbar-item-text">Categories</span></li>
+            <li id="myList-btn" class="navbar-item"><i class="fa-solid fa-plus nav-icon"></i><span class="navbar-item-text">My List</span></li>
+            <li id="notifications-btn" class="navbar-item"><i class="fa-solid fa-bell nav-icon"></i><span class="navbar-item-text">Notifications</span></li>
+        </ul>
+    </div>
+    <div class="movieOptions">
+        <!--Override 'top searches' with user input-->
+        <input id="search-input" class="search-input" type="text" placeholder="Top Searches">
+        <!-- <label class="search-lbl"></label> -->
+        <div class="grid-container">
+            <!--grid item will grab movie URL-->
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+        </div>
+    </div>
+    <!-- <div class="autoFill">
+        <!--
+            ! Create function to fill with elements containing genres from movie class
+        <div class="autoFill-item">Comedy</div>
+        <div class="autoFill-item">Drama</div>
+        <div class="autoFill-item">Horror</div>
+        <div class="autoFill-item">Action</div>
+        <div class="autoFill-item">Kids & Family</div>
+        <div class="autoFill-item">Documentary</div>
+        <div class="autoFill-item">2022 Netflix Emmys</div>
+        <div class="autoFill-item">Black Stories</div>
+        <div class="autoFill-item">Crime</div>
+    </div> -->
+    <ul id="genre-list" class="genre-list">
+    </ul>
+</body>
+<!--jQuery Code-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<!--Font Awesome-->
+<script src="https://kit.fontawesome.com/f06ad63a54.js" crossorigin="anonymous"></script>
+<script type="module">
+    //JS Code and JQuery
+    import {movie} from "./movieSelection.js";
+    import {selectedMovie} from "./movieSelection.js";
+    //import genre to fill div(ul) element
+    // import {loadGenres} from "./categories.html";
+
+    $(document).ready(function(){
+        var item = "";
+        var prevInput = [];
+        var searchCount = 0;
+        initialLoad();
+
+        function initialLoad(){
+            for(let i = 0; i < movie.length; i++){
+                item = $(".grid-container").children(".grid-item:nth-child(" + (i+1) + ")")
+
+                item.css("background-image", movie[i].image);
+                item.addClass(movie[i].className);
+            }
+        }
+
+        var searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("keypress", function(event){
+            if(event.keyCode == 13){
+                Search();
+            }
+        });
+
+        function Search(){
+            let input = document.getElementById("search-input").value;
+            prevInput[searchCount] = input;
+            if(input !== prevInput[searchCount - 1]){
+                showAll();
+                searchTitle(input);
+            }
+            else if(input === ""){
+                showAll();
+            }
+            searchCount++;
+        }
+
+        function searchTitle(searchInput){
+            console.log(searchInput);
+            for (let i = 0; i < movie.length; i++){
+                console.log(movie[i].title);
+                let result = ((movie[i].title).toLowerCase()).includes(searchInput.toLowerCase());
+                item = $(".grid-container").children(".grid-item:nth-child(" + (i+1) + ")");
+                if(result !== true){
+                    console.log(result);
+                    item.hide();
+                }
+                console.log(item);
+            }
+        }
+
+        function searchGenre(searchInput){
+            console.log(searchInput);
+            for (let i = 0; i < movie.length; i++){
+                console.log(movie[i].genre);
+                let result = ((movie[i].genre).toLowerCase()).includes(searchInput.toLowerCase());
+                item = $(".grid-container").children(".grid-item:nth-child(" + (i+1) + ")");
+                if(result !== true){
+                    console.log(result);
+                    item.hide();
+                }
+                console.log(item);
+            }
+        }
+
+        function showAll(){
+            for (let i = 0; i < movie.length; i++) {
+                    item = $(".grid-container").children(".grid-item:nth-child(" + (i+1) + ")");
+                    item.show();
+                }
+        }
+
+        $(".grid-item").click(function(){
+            selectedMovie($(this));
+        });
+
+        $(".autoFill-item").click(function(){
+            let input = $(this).text();
+            console.log(input);
+            searchGenre(input);
+        });
+    });
+</script>
+<script src="navbar.js" type="module"></script>
+<script src="movieSelection.js" type="module"></script>
+<script src="netflixClone.js" type="module"></script>
+
+</html>

@@ -1,0 +1,75 @@
+.workCard{
+    background-color: black;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    margin: 15% 50%;
+    border: 8px solid black;
+    border-radius: 12px 12px 0px 0px;
+    border: none;
+}
+
+.workCard-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.workCard-caption{
+    width: 120px;
+    font-size: var(--smallStandardFontSize);
+    text-align: center;
+    color: var(--textColor);
+    margin-top: 0px;
+    display: none;
+    background-color: var(--textColor02);
+}
+
+.animate{
+    animation: 500ms cardAnimation-forward linear 1;
+    animation-fill-mode: forwards;
+}
+
+.animate:not(:hover){
+    animation-delay: 200ms;
+    animation: 500ms cardAnimation-reverse linear 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cardAnimation-forward{
+    0%{
+        transform: scale(1.0);
+        opacity: (1);
+    }
+    100%{
+        transform: scale(2.0);
+        opacity: (0.3);
+    }
+}
+
+@keyframes cardAnimation-reverse{
+    0%{
+        transform: scale(2.0);
+        opacity: (0.3);
+    }
+    100%{
+        transform: scale(1.0);
+        opacity: (1.0);
+    }
+}
+
+/* ? Work Page Adjustments*/
+@media screen and (max-width: 766px){
+    .work-title{
+        font-size: 40pt;
+    }
+    .workCard{
+        margin: 0px !important;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    .work-title{
+        font-size: 50pt;
+    }
+}

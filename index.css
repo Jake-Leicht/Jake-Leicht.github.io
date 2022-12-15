@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root{
+
+    /*Size Dimensions*/
+    --tabWidth: 20vw;
+    --containerWidthMin: 50vw;
+    --containerWidthMax: 80vw;
+
+    /*Fonts*/
+    --font-family: 'Roboto', sans-serif;
+
+    /*Font Sizes*/
+    --name: 40pt;
+    --header: 36pt; /*Temp*/
+    --aboutMeTabFontSize: 24pt;
+    --standardFontSize: 20pt;
+    --smallStandardFontSize: 16pt;
+    --quoteFontSize: 12pt;
+    --imgCaptionFontSize: 8pt;
+
+    /*Color Pallette Ideas*/
+    --01color01: #F2EBE5;
+    --01color02: #647295;
+    --01color03: #9F496E;
+    --01color04: #2B262D;
+
+    --02color01: #F9F7F0;
+    --02color02: #18B7BE;
+    --02color03: #178CA4;
+    --02color04: #072A40;
+
+    --03color01: #080D19;
+    --03color02: #1D4CB0;
+    --03color03: #BFB8CB;
+    --03color04: #2DA2EC;
+
+    --04color01: #071E3D;   /*background*/
+    --04color02: #1f4287;   /*text*/
+    --04color03: #278EA5;   /*nav*/
+    --04color04: #21E6C1;   /*accent/interact*/
+
+    /* --background: #232323; */
+    --textColor: whitesmoke;
+    --blue: #2DA2Ec;
+    --darkBlue: darkBlue;
+
+    --navText: #86868B;
+    --contentText: whitesmoke;
+    --standOut: #1561F0;
+
+    /* --background: #131313;
+    --backgroundSub: #2B2B2B;
+    --glow: #2DA2EC;
+    --icon: #2DA2EC; */
+
+    /*Final Colors*/
+    --background: #071E3D;
+    --backgroundSub: #072A40;
+    --textColor: whitesmoke;
+    --textColor02: #278EA5;
+    --textColor03: #21E6C1;
+    --glow: #2DA2EC;
+    --icon: #2DA2EC;
+}
+
+/* html{
+    scroll-behavior: smooth;
+} */
+
+body{
+    /* overflow-x: hidden; */
+    background-color: var(--background) !important;
+}
+
+.preload *{
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+}

@@ -1,0 +1,32 @@
+.doubleLike{
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 1.4em;
+    text-align: center;
+    top: 15px;
+}
+
+.doubleLike i:nth-child(1), .doubleLike i:nth-child(2){
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+.doubleLike i:nth-child(1){
+    left: 18px;
+    bottom: 12px'
+}
+
+.doubleLike i:nth-child(2){
+    left: 10px;
+    bottom: 10px;
+    z-index: 2;
+}
+
+.doubleLike:hover{
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+}

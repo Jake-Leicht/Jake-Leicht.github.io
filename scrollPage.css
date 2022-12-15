@@ -1,0 +1,368 @@
+.main-content{
+    font-family: var(--font-family);
+}
+.page-section {
+    background-color: var(--background);
+    height: 100vh;
+    color: var(--textColor);
+    font-size: 16pt;
+    padding: 8% 5%;
+    text-align: center;
+    display: block;
+}
+
+.page-section-content{
+    padding: 18px;
+    width: 90vw;
+    height: 50vh;
+    display: inline-flex;
+}
+
+.content{
+    display: inline-block;
+    align-items: center;
+    text-align: left;
+}
+
+.content-tab{
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+.content-tab-list{
+    list-style-type: none;
+    text-align: left;
+}
+
+.content-tab-text{
+    width: 50%;
+    font-size: 16pt;
+    text-align: left;
+    line-height: 1.9;
+}
+
+.page-section-content-text{
+    width: 50%;
+    padding: 20px;
+}
+
+.description{
+    line-height: 1.6;
+    padding-right: 12px;
+}
+
+.img-container{
+    margin-left: 20%;
+    z-index: 1;
+}
+
+.profile-pic{
+    width: 401px;
+    height: 401px;
+    filter: grayscale(100%);
+}
+
+.profile-pic-caption{
+    font-size: var(--imgCaptionFontSize);
+    text-align: right;
+}
+
+.page-section:nth-of-type(2n) {
+    background-color: var(--backgroundSub);
+}
+
+.name{
+    font-size: var(--name);
+    color: #278EA5;
+    margin: 20px 0px;
+}
+
+.intro{
+    font-size: var(--standardFontSize);
+    color: #21E6C1;
+}
+
+.quote{
+    font-size: var(--quoteFontSize);
+    font-style: italic;
+}
+
+/* ? About Me Section */
+
+
+/* ? work section*/
+.work-content{
+    /* background-color: var(--backgroundSub); */
+    border-radius: 20px;
+    display: inline-block;
+    height: 100%;
+}
+
+.row{
+    height: 60%;
+    align-items: center;
+}
+
+.work-title{
+    font-size: var(--header);
+    background-color: var(--background);
+}
+
+.tab{
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/* ? Contact Section */
+
+.contact-btn, .returnToTop-btn{
+    background-color: var(--background);
+    color: white;
+    border: 1 px solid var(--background);
+    border-radius: 12px;
+    width: 15%;
+    padding: 8px;
+    font-size: var(--aboutMeTabFontSize);
+    text-align: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.returnToTop-btn{
+    display: block;
+    margin: 20% auto 0px auto;
+}
+
+.contact-btn:hover .contact-btn-arrow{
+    animation: 400ms contact-arrow linear 1;
+    color: var(--textColor03);
+}
+
+.returnToTop-btn:hover .returnToTop-arrow{
+    animation: 1100ms returnToTop-arrow-up linear infinite;
+    color: var(--textColor03);
+}
+
+.contact-btn:hover, .returnToTop-btn:hover{
+    color: var(--textColor03);
+}
+
+.contact-btn-arrow{
+    position: relative;
+    margin: 0% 0% 0% 10%;
+}
+
+@keyframes contact-arrow{
+    0%{
+        transform: translateY(0px);
+    }
+    33%{
+        transform: translateY(50px);
+        visibility: hidden;
+    }
+    66%{
+        visibility: hidden;
+        transform: translateY(-100px)
+    }
+    100%{
+        transform: translateY(0px);
+        visibility: visible;
+    }
+}
+
+/* todo: alter animation, wiggle arrow up and down in frame*/
+@keyframes returnToTop-arrow-up{
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(-5px);
+    }
+    75%{
+        transform: translateY(10px)
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+#page-section-contact{
+    position: relative;
+}
+
+.contact-title{
+    margin-bottom: 80px;
+}
+
+footer{
+    background-color: var(--background);
+    width: 100vw;
+    height: 10vh;
+    color: gray;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/* * Optimize down to 320px for small devizes*/
+@media screen and (max-width: 766px){
+    /* ? Home Page Adjustments*/
+    .intro, .content{
+        font-size: 14pt;
+    }
+    .intro{
+        margin-bottom: 0px;
+    }
+    .name{
+        font-size: 20pt;
+        margin: 6px 0px;
+    }
+    .quote{
+        display: none;
+    }
+    .content{
+        width: 100vw;
+        margin: 0px;
+    }
+    .page-section{
+        padding: 0px;
+    }
+    .page-section-content{
+        display: block;
+    }
+    .img-container{
+        text-align: center;
+    }
+    .profile-pic-caption{
+        font-size: 5pt;
+        text-align: center;
+    }
+    .profile-pic{
+        width: 60%;
+        height: 60%;
+        /* max-width: 301px;
+        max-height: 301px; */
+    }
+
+    /* ? Contact Page Adjustments*/
+    .contact-btn{
+        font-size: 12pt;
+        width: 50vw;
+    }
+
+    #page-section-contact{
+        font-size: 14pt;
+        padding-top: 25vh;
+    }
+
+    .returnToTop-btn{
+        margin-top: 20vh;
+    }
+
+    footer{
+        font-size: 12pt;
+        height: 5vh;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    /* ? Home Page Adjustments*/
+    .intro, .content{
+        font-size: 18pt;
+    }
+    .name{
+        font-size: 26pt;
+        margin: 6px 0px;
+        line-height: 1.4;
+    }
+    .intro{
+        margin-bottom: 0px;
+    }
+    .quote{
+        display: show;
+        font-size: 12pt;
+    }
+    .content{
+        width: 95vw;
+        margin: 0px;
+    }
+    .page-section{
+        padding: 0px;
+    }
+    .page-section-content{
+        display: block;
+    }
+    .img-container{
+        text-align: center;
+    }
+    .profile-pic-caption{
+        font-size: 5pt;
+        text-align: center;
+    }
+    .profile-pic{
+        width: 401px;
+        height: 401px;
+        max-width: 401px;
+        max-height: 401px;
+    }
+
+    /* ? Contact Page Adjustments */
+    .contact-btn{
+        font-size: 18pt;
+        width: 40vw;
+    }
+
+    #page-section-contact{
+        font-size: 20pt;
+        padding-top: 20vh;
+    }
+
+    .returnToTop-btn{
+        margin-top: 25vh;
+    }
+
+    footer{
+        font-size: 18pt;
+        height: 5vh;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px){
+    /* ? Home Page Adjustments*/
+    .intro, .content{
+        font-size: 18;
+    }
+    .name{
+        font-size: var(--name);
+        margin: 6px 0px;
+    }
+    .intro{
+        margin-bottom: 0px;
+    }
+    .quote{
+        display: show;
+        font-size: var(--quoteFontSize);
+    }
+    .content{
+        width: 95vw;
+        margin: 0px;
+        padding: 5%;
+    }
+    .page-section{
+        padding: 0px;
+    }
+    .img-container{
+        text-align: center;
+    }
+    .profile-pic-caption{
+        font-size: 5pt;
+        text-align: center;
+    }
+    .profile-pic{
+        width: 401px;
+        height: 401px;
+        max-width: 401px;
+        max-height: 401px;
+    }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio | Jake Leicht</title>
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <meta name="author" content="Jake Leicht">
+
+    <!--Stylesheets (CSS)-->
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./navbarPage.css">
+    <link rel="stylesheet" href="./scrollPage.css">
+    <link rel="stylesheet" href="./asideSocialMedia.css">
+    <link rel="stylesheet" href="./aboutMe.css">
+    <link rel="stylesheet" href="./workShowcase.css">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/jpg" href="./images/favicon.jpeg" sizes="260x260">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body class="preload">
+    <!-- ~popUp nav bar-->
+    <nav>
+        <div class="navbar">
+            <div class="container nav-container">
+                <input class="checkbox" title="nav-bar" type="checkbox" name="" id="nav-container-checkbox">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <!-- todo: create animation of checkmark on click-->
+                <div class="logo">
+                    <h1><a href="./files/resume.docx">JL</a></h1>
+                </div>
+                <div class="menu-items">
+                    <ul>
+                        <li id="menu-item-home"><a href="#">Home</a></li>
+                        <li id="menu-item-about"><a href="#">About</a></li>
+                        <!-- <li id="menu-item-skills"><a href="#">Skills</a></li> -->
+                        <li id="menu-item-work"><a href="#">Work</a></li>
+                        <li id="menu-item-contact"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- ~smooth scrolling page-->
+    <div class="main-content">
+        <section class="page-section" id="home">
+            <div class="page-section-content home-page">
+                <div class="page-section-content-text content">
+                    <p class="intro">Hello, my name is</p>
+                    <h1 class="name">Jake Leicht</h1>
+                    <p class="description">Aspiring <span class="jobTitle">frontend web developer</span> 
+                        from Bloomington, MN with a strong focus on functionality and continual growth. 
+                        Working to grow my skills in becoming a more proficient developer, and to grow my 
+                        talent to become a Fullstack developer in the future.</p>
+                        <blockquote class="quote" cite="David Thomas & Andrew Hunt, The Pragmatic Programmer">"...we need to get back to thinking of programs as being something that 
+                            transforms inputs into outputs. When we do, many of the details we previously worried 
+                            about just evaporate. The structure becomes clearer, the error handling more consistent, 
+                            and the coupling drops way down." -David Thomas & Andrew Hunt, The Pragmatic Programmer</blockquote>
+                </div>
+                <div class="img-container content">
+                    <figure>
+                        <img src="/images/IMG_1596.JPG" type="jpg" alt="Profile-pic" class="profile-pic">
+                        <figcaption class="profile-pic-caption">2022 Honors Convocation Ceremony (Honors Graduates)</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="about">
+            <div class="header-selection-bar"></div>
+            <div class="header-container">
+                <span class="header-tab active">About Me</span>
+                <span class="header-tab">Education</span>
+                <span class="header-tab">Experience</span>
+            </div>
+            <div class="content-container">
+                <div class="content-tab">
+                    <span class="content-tab-text">
+                        <p><span class="tab"></span>I began my journey into web development my junior year of college
+                            during one of my classes (ironically) learning the fundamentals of
+                            web development. During this class my professor asked me to assist 
+                            in updating a website for a local women's guest house. I was still learning 
+                            during this process but enjoyed the work very much. While the website had 
+                            a great deal to improve off of, and the result wasn't great, I was happy with 
+                            it. Many of my suggestions were turned down, as they weren't looking for many 
+                            changes, the project was exciting and made me want to begin a career in web development.
+                            This project gave me my first experience working with HTML, CSS, Bootstrap, and Javascript 
+                            outside the classroom.
+                        </p>
+                    </span>
+                    <span class="content-tab-img"><img type="jpg" src="./images/IMG_1621.JPG" alt="Graduation Ceremony" class="profile-pic"></span>
+                </div>
+                <div id="content-tab-education" class="content-tab">
+                    <ul class="content-tab-list">
+                        <li><span class="emphasize">Graduated with honors</span> from Briar Cliff University <abbr title="Briar Cliff University">(BCU)</abbr> in May 2022</li>
+                        <li><span class="emphasize">Majored in Computer Science</span> with a <span class="emphasize">minor in Business Administration</span></li>
+                        <li>Graduated with a cumulative <span class="emphasize">3.58 GPA</span></li>
+                        <li>Made the <span class="emphasize">Dean's List</span> in spring of 2021, fall of 2021, and spring of 2022</li>
+                        <li class="emphasize">Treasurer of Honors Society 2021-2022</li>
+                        <li>Made the <span class="emphasize">Athletic Director (AD) Honor Roll</span> spring of 2021 and fall of 2021</li>
+                    </ul>
+                </div>
+                <div class="content-tab content-tab-work">
+                    <div class="underGrad-container">
+                        <h1>Undergraduate Research Assistant at <abbr title="North Dakota State University">NDSU</abbr></h1>
+                        <ul class="underGrad-list">
+                            <li class="underGrad-list-detail">Jun 2021 - Aug 2021</li>
+                            <li class="underGrad-list-detail">Assisted in developing an application for Android mobile devices used for tracking and recording user interaction with their devices.</li>
+                            <li class="underGrad-list-detail">Tested and trained collected data to verify the potential of using user's gestures and interactions as a method for security authorization.</li>
+                            <li class="underGrad-list-detail">Refactored and revised code for improved optimal ability.</li>
+                        </ul>
+                        <div class="button-container">
+                            <!-- todo: animate buttons to match contact btn-->
+                            <a href="./files/MockUpPosterPresentation02[1566]_FINALDRAFT.pdf"><button type="button" class="button">View Document<i class="fa-solid fa-file-arrow-down icon-btn"></i></button></a>
+                            <a href="./images/certificate.JPG"><button type="button" class="button certificate-btn">View Certificate<i class="fa-solid fa-file-arrow-down icon-btn"></i></button></a>
+                        </div>
+                    </div>
+                    <div class="techMentor-container">
+                        <h1>Technology Mentor at Briar Cliff University <abbr title="Briar Cliff University">(BCU)</abbr></h1>
+                        <ul class="techMentor-list">
+                            <li class="underGrad-list-detail"> Sept 2021 - May 2022</li>
+                            <li class="underGrad-list-detail">Assisted in any technology related issues students came across at Briar Cliff University</li>
+                            <li class="underGrad-list-detail">Monitored usage and equipment of the Digital Media Creation Studio</li>
+                            <li class="underGrad-list-detail">Responsible for any checkouts involving laptops, movies, and any other campus resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="work">
+            <span class="work-content container">
+                <span class="work-title container">Projects</span>
+                <span class="row">
+                    <div class="col col-sm-5">
+                        <figure id="squabbleClone" class="workCard">
+                            <img class="workCard-img" src="./images/squabble-favicon.jpeg" alt="Squabble Clone">
+                            <figcaption class="workCard-caption">Squabble Clone</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col col-sm-5">
+                        <figure id="netflixClone" class="workCard">
+                            <img class="workCard-img" src="./images/OIP (19).jpg" alt="Squabble Clone">
+                            <figcaption class="workCard-caption">Netflix Clone</figcaption>
+                        </figure>
+                    </div>
+                </span>
+            </span>
+        </section>
+        <section class="page-section" id="page-section-contact">
+            <h1 class="contact-title">Wanna get in contact?</h1>
+            <p>Currently seeking new opportunities and positions.</p>
+            <a href="mailto:JakeSnakeBCU@gmail.com"><button type="button" class="contact-btn">Reach Out<i class="fa-solid fa-arrow-down contact-btn-arrow"></i></button></a>
+            <button type="button" id="returnToTop-btn" class="returnToTop-btn" title="return to top"><i class="fa-solid fa-arrow-up returnToTop-arrow"></i></button>
+            <footer>
+                <p>Website created by Jake Leicht 2022</p>
+            </footer>
+        </section>
+    </div>
+    <div>
+        <ul class="asideSocial">
+            <li class="asideSocial-item">
+                <a title="Instagram" href="https://www.instagram.com/jake_leicht/"><i class="fa-brands fa-instagram icon"></i></a>
+            </li>
+            <li class="asideSocial-item">
+                <a title="LinkedIn" href="https://www.linkedin.com/in/jake-leicht/"><i class="fa-brands fa-linkedin icon"></i></a>
+            </li>
+            <li class="asideSocial-item">
+                <a title="Glassdoor" href="https://www.glassdoor.com/member/profile/index.htm"><i class="fa-brands fa-google icon"></i></a>
+            </li>
+            <li class="asideSocial-item">
+                <a title="GitHub" href="https://github.com/Jake-Leicht"><i class="fa-brands fa-github icon"></i></a>
+            </li>
+            <li class="indicator indicator-down"><i id="indicator-arrow" class="fa-solid fa-arrow-down icon"></i></li>
+            <li class="collapse-arrow"><i class="fa-solid fa-chevron-right"></i></li>
+        </ul>
+        <div class="highlight"></div>
+    </di>
+</body>
+<!--jQuery Code-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<!--Font Awesome-->
+<script src="https://kit.fontawesome.com/f06ad63a54.js" crossorigin="anonymous"></script>
+<script>
+    //JS Code and JQuery
+    $(document).ready(function(){
+        
+    });
+</script>
+<script src="./smoothScroll.js"></script>
+<script src="./asideSocialMedia.js"></script>
+<script src="./aboutMe.js"></script>
+<script src="./workShowcase.js"></script>
+<script src="./navbarPage.js"></script>
+<!--
+    console.log()
+    ? Summary
+    ! Error
+    & console.log() (Outputs/logs)
+    ^ params/function explanation
+    * Notes
+    ~ Purple
+    todo Feature to add/edit-->
+</html>
