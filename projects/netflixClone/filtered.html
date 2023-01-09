@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Document details-->
+    <title>Netflix | Filtered</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <meta name="author" content="Jake Leicht">
+
+    <!--Stylesheets (CSS)-->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="netflixClone.css">
+
+    <!--Favicon-->
+    <link rel="icon" type="image/jpg" href="./images/faviconNetflix.jpg" sizes="260x260#" sizes="260x260">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <p class="deviceToSmall">Device to small to view this content</p>
+    <!-- ! copy home page into here again to ensure corrections are made-->
+    <div class="header">
+        <div class="header-details">
+            <p><i class="fa-solid fa-n netflixLogo"></i><span class="filmType"></span></p>
+            <h1 class="title">Title</h1>
+            <div class="header-attributes-container">
+                <span class="rating">Match</span>
+                <span class="releaseYear">0000</span>
+                <span class="movieRating">G</span>
+                <span class="movieDuration">0 mins</span>
+                <span class="hd-icon">HD</span>
+            <span class="aspect-ratio">6:1</span>
+            </div>
+            <p id="description" class="description">Description: </p>
+        </div>
+        <div class="header-image">
+        </div>
+    </div>
+    <div class="navbar">
+        <ul class="nav navbar-nav">
+            <li id="search-btn" class="navbar-item"><i class="fa-solid fa-magnifying-glass nav-icon"></i><span class="navbar-item-text">Search</span></li>
+            <li id="home-btn" class="navbar-item"><i class="fa-solid fa-house nav-icon active"></i><span class="navbar-item-text">Home</span></li>
+            <li id="surpriseMe-btn" class="navbar-item"><i class="fa-solid fa-arrow-rotate-right nav-icon"></i><span class="navbar-item-text">Surprise Me</span></li>
+            <li id="newsPopular-btn" class="navbar-item"><i class="fa-solid fa-arrow-trend-up nav-icon"></i><span class="navbar-item-text">News & Popular</span></li>
+            <li id="tvShows-btn" class="navbar-item"><i class="fa-solid fa-tv nav-icon"></i><span class="navbar-item-text">Tv Shows</span></li>
+            <li id="movies-btn" class="navbar-item"><i class="fa-solid fa-clapperboard nav-icon"></i><span class="navbar-item-text">Movies</span></li>
+            <li id="categories-btn" class="navbar-item"><i class="fa-solid fa-shapes nav-icon"></i><span class="navbar-item-text">Categories</span></li>
+            <li id="myList-btn" class="navbar-item"><i class="fa-solid fa-plus nav-icon"></i><span class="navbar-item-text">My List</span></li>
+            <li id="notifications-btn" class="popup navbar-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span class="navbar-item-text">Notifications</span>
+                <span id="notification-popup" class="notification-popUp show"></span>
+            </li>
+        </ul>
+    </div>
+    <div class="film-container">
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+        <div class="group">
+        </div>
+</body>
+<!--jQuery Code-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<!--Font Awesome-->
+<script src="https://kit.fontawesome.com/f06ad63a54.js" crossorigin="anonymous"></script>
+<script type="module">
+    $(document).ready(function(){
+        let notification = document.getElementById("notification-popup")
+        let button = $(".navbar-item");
+
+        button = $(".navbar-item").click(function(){
+            if(count === "" || count === 0){
+                $("#notification-popup").addClass("show");
+            }
+            addNotification()
+        });
+
+        button.hover(function(){
+            if(count === "" || count === 0){
+                $("#notification-popup").removeClass("show");
+            }
+        });
+        var count = 0;
+
+        function addNotification(){
+            console.log("addNotification() called");
+            count++;
+            notification.innerHTML = count;
+        }
+    });
+</script>
+<script src="navbar.js" type="module"></script>
+<script src="movieSelection.js" type="module"></script>
+<script src="netflixClone.js" type="module"></script>
+
+</html>

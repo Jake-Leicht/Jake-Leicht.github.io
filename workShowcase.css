@@ -1,0 +1,86 @@
+.workCard{
+    background-color: black;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    margin: 15% auto;
+    border: 8px solid black;
+    border-radius: 12px 12px 0px 0px;
+    border: none;
+}
+
+.workCard-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.workCard-caption{
+    width: 180px;
+    font-size: 14pt;
+    text-align: center;
+    color: var(--textColor);
+    margin-top: 0px;
+    display: none;
+    background-color: var(--textColor02);
+}
+
+/* .row{
+    border: 2px solid red;
+    height: 30vh;
+}
+
+.col{
+    border: 2px solid orange;
+} */
+
+.animate{
+    animation: 500ms cardAnimation-forward linear 1;
+    animation-fill-mode: forwards;
+}
+
+.animate:not(:hover){
+    animation-delay: 200ms;
+    animation: 500ms cardAnimation-reverse linear 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cardAnimation-forward{
+    0%{
+        transform: scale(1.0);
+        opacity: (1);
+    }
+    100%{
+        transform: scale(1.6);
+        opacity: (0.3);
+    }
+}
+
+@keyframes cardAnimation-reverse{
+    0%{
+        transform: scale(1.6);
+        opacity: (0.3);
+    }
+    100%{
+        transform: scale(1.0);
+        opacity: (1.0);
+    }
+}
+
+/* ? Work Page Adjustments*/
+@media screen and (max-width: 766px){
+    .work-title{
+        font-size: 35pt;
+    }
+
+    .workCard{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    .work-title{
+        font-size: 50pt;
+    }
+}

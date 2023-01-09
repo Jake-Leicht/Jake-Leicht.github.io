@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root{
+
+    /*Size Dimensions*/
+    --tabWidth: 20vw;
+    --containerWidthMin: 50vw;
+    --containerWidthMax: 80vw;
+
+    /*Fonts*/
+    --font-family: 'Roboto', sans-serif;
+
+    /*Font Sizes*/
+    --name: 40pt;
+    --header: 36pt; /*Temp*/
+    --aboutMeTabFontSize: 24pt;
+    --standardFontSize: 20pt;
+    --smallStandardFontSize: 16pt;
+    --quoteFontSize: 12pt;
+    --imgCaptionFontSize: 8pt;
+
+    /* --background: #232323; */
+    --textColor: whitesmoke;
+    --blue: #2DA2Ec;
+    --darkBlue: darkBlue;
+
+    --navText: #86868B;
+    --contentText: whitesmoke;
+    --standOut: #1561F0;
+
+    /*Final Colors*/
+    --background: #071E3D;
+    --backgroundSub: #072A40;
+    --textColor: whitesmoke;
+    --textColor02: #278EA5;
+    --textColor03: #21E6C1;
+    --glow: #2DA2EC;
+    --icon: #2DA2EC;
+}
+
+/* html{
+    scroll-behavior: smooth;
+} */
+
+body{
+    overflow-x: hidden;
+    background-color: var(--background) !important;
+}
+
+.preload *{
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+}
