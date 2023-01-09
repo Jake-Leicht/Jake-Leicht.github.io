@@ -27,23 +27,22 @@ function runOnScroll(element) {
         setTimeout(function(){
             let scrollY = window.pageYOffset;
             let sectionTop = (element.getBoundingClientRect().top + window.pageYOffset) - 50;
-            let offset = window.innerHeight * 0.60;
+            let offset = window.innerHeight * 0.6;
             let adjustedHeight = scrollY + offset;
-            let selectedSection;
 
-            if (adjustedHeight < 987){
+            if (adjustedHeight < screen.availHeight){
                 fixArrow(adjustedHeight);
                 homePage.animate({opacity: 1}, 500);
             }
-            else if(adjustedHeight >= 987 && adjustedHeight <= 1948){
+            else if(adjustedHeight >= screen.availHeight && adjustedHeight <= (screen.availHeight * 2)){
                 fixArrow(adjustedHeight);
                 aboutMePage.animate({opacity: 1}, 500);
             }
-            else if(adjustedHeight >= 1948 && adjustedHeight <= 2909){
+            else if(adjustedHeight >= (screen.availHeight * 2) && adjustedHeight <= (screen.availHeight * 3)){
                 fixArrow(adjustedHeight);
                 workPage.animate({opacity: 1}, 500);
             }
-            else if(adjustedHeight > 2909){
+            else if(adjustedHeight > (screen.availHeight * 3)){
                 fixArrow(adjustedHeight);
                 contactPage.animate({opacity: 1}, 500);
             }
